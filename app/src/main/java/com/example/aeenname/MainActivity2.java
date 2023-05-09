@@ -36,7 +36,7 @@ public class MainActivity2 extends AppCompatActivity {
                     Toast.makeText(MainActivity2.this, "صحیح", Toast.LENGTH_SHORT).show();
                 }   else {
                     ++False;
-                    Intent intentFalse=new Intent (MainActivity2.this,MainActivity3.class);
+                    Intent intentFalse =new Intent (MainActivity2.this,MainActivity3.class);
                     intentFalse.putExtra("false answer",False);
                     intentFalse.putExtra("true answer",True);
                     intentFalse.putExtra("tests number",TestsNumber);

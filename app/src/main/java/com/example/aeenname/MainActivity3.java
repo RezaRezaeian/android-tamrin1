@@ -18,21 +18,21 @@ public class MainActivity3 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
-        RadioButton btnTrue=findViewById(R.id.radioButton3);
-        Button btnNext=findViewById(R.id.btnNext);
+        RadioButton btnTrue =findViewById(R.id.radioButton3);
+        Button btnNext =findViewById(R.id.btnNext);
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Intent recieve=getIntent();
-                int True=recieve.getIntExtra("true answer",0);
-                int False=recieve.getIntExtra("false answer",0);
-                int TestsNumber=recieve.getIntExtra("tests number",0);
+                Intent recieve =getIntent();
+                int True =recieve.getIntExtra("true answer",0);
+                int False =recieve.getIntExtra("false answer",0);
+                int TestsNumber =recieve.getIntExtra("tests number",0);
                 TestsNumber++;
                 if (btnTrue.isChecked()) {
                     ++True;
                     Toast.makeText(MainActivity3.this, "صحیح", Toast.LENGTH_SHORT).show();
-                    Intent intentOk=new Intent (MainActivity3.this,MainActivity4.class);
+                    Intent intentOk =new Intent (MainActivity3.this,MainActivity4.class);
                     intentOk.putExtra("true answer",True);
                     intentOk.putExtra("false answer",False);
                     intentOk.putExtra("tests number",TestsNumber);
@@ -46,7 +46,6 @@ public class MainActivity3 extends AppCompatActivity {
                     intentFalse.putExtra("tests number",TestsNumber);
                     startActivity(intentFalse);
                 }
-
             }
         });
     }
