@@ -28,28 +28,22 @@ public class MainActivity2 extends AppCompatActivity {
                 TestsNumber++;
                 if (btnTrue.isChecked()) {
                     ++True;
-                    Intent intentok=new Intent (MainActivity2.this,MainActivity3.class);
-                    intentok.putExtra("true answer",True);
-                    intentok.putExtra("false answer",False);
-                    intentok.putExtra("tests number",TestsNumber);
-                    startActivity(intentok);
+                    Intent intentOk=new Intent (MainActivity2.this,MainActivity3.class);
+                    intentOk.putExtra("true answer",True);
+                    intentOk.putExtra("false answer",False);
+                    intentOk.putExtra("tests number",TestsNumber);
+                    startActivity(intentOk);
                     Toast.makeText(MainActivity2.this, "صحیح", Toast.LENGTH_SHORT).show();
                 }   else {
                     ++False;
-                    Intent intentfalse=new Intent (MainActivity2.this,MainActivity3.class);
-                    intentfalse.putExtra("false answer",False);
-                    intentfalse.putExtra("true answer",True);
-                    intentfalse.putExtra("tests number",TestsNumber);
-                    startActivity(intentfalse);
+                    Intent intentFalse=new Intent (MainActivity2.this,MainActivity3.class);
+                    intentFalse.putExtra("false answer",False);
+                    intentFalse.putExtra("true answer",True);
+                    intentFalse.putExtra("tests number",TestsNumber);
+                    startActivity(intentFalse);
                     Toast.makeText(MainActivity2.this, "غلط", Toast.LENGTH_SHORT).show();
                 }
             }
         });
-
-
-/*
-  if (rbutton.isChecked())
-                    Toast.makeText(MainActivity2.this,"درسته",Toast.LENGTH_LONG).show();
- */
     }
 }
