@@ -22,31 +22,18 @@ public class MainActivity7 extends AppCompatActivity {
         TextView False =findViewById(R.id.textView4);
         TextView TestsNumber =findViewById(R.id.textView5);
         Intent recieve =getIntent();
-        int TrueAnswer =recieve.getIntExtra("true answer",0);
-        int FalseAnswer =recieve.getIntExtra("false answer",0);
-        int NumberOfTests =recieve.getIntExtra("tests number",0);
-        //  int percent=((3*TrueAnswer)-(FalseAnswer)/(NumberOfTests*3));
-        int percent=((TrueAnswer*3)-FalseAnswer)/(NumberOfTests*3);
-
-
-        True.setText("پاسخ های درست :"+String.valueOf(TrueAnswer));
-        True.setTextSize(25);
-
-
-        False.setText("پاسخ غلط :"+String.valueOf(FalseAnswer));
-        False.setTextSize(25);
-
-
-        TestsNumber.setText("تعداد سوالات : "+String.valueOf(NumberOfTests));
-        TestsNumber.setTextSize(25);
-
-
-
-
-        exampercent.setText("نمره پایانی :"+String.valueOf(percent)+"%");
-        exampercent.setTextSize(25);
-
-
+        int TrueA =recieve.getIntExtra("true answer",0);
+        int FalseA =recieve.getIntExtra("false answer",0);
+        int TestsNumbers =recieve.getIntExtra("tests number",0);
+        int percent =100-(20 * FalseA);
+        True.setText("پاسخ های درست : "+String.valueOf(TrueA));
+        True.setTextSize(18);
+        False.setText("پاسخ های غلط : "+String.valueOf(FalseA));
+        False.setTextSize(18);
+        TestsNumber.setText("تعداد سوالات : "+String.valueOf(TestsNumbers));
+        TestsNumber.setTextSize(18);
+        exampercent.setText("نمره پایانی : "+String.valueOf(percent)+"%");
+        exampercent.setTextSize(18);
         btnrestart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

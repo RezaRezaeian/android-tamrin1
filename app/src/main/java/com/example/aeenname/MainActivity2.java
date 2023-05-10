@@ -18,6 +18,7 @@ public class MainActivity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
         RadioButton btnTrue =findViewById(R.id.radioButton);
+        RadioGroup radioGroup =findViewById(R.id.radioGroup);
         Button btnNext =findViewById(R.id.btnNext);
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,7 +35,9 @@ public class MainActivity2 extends AppCompatActivity {
                     intentOk.putExtra("tests number",TestsNumber);
                     startActivity(intentOk);
                     Toast.makeText(MainActivity2.this, "صحیح", Toast.LENGTH_SHORT).show();
-                }   else {
+                }   else if(radioGroup.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(MainActivity2.this, "یک گزینه انتخاب کنید", Toast.LENGTH_SHORT).show();
+                }else{
                     ++False;
                     Intent intentFalse =new Intent (MainActivity2.this,MainActivity3.class);
                     intentFalse.putExtra("false answer",False);

@@ -9,6 +9,7 @@ import android.view.TextureView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,6 +20,7 @@ public class MainActivity3 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
         RadioButton btnTrue =findViewById(R.id.radioButton3);
+        RadioGroup radioGroup =findViewById(R.id.radioGroup);
         Button btnNext =findViewById(R.id.btnNext);
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,7 +39,10 @@ public class MainActivity3 extends AppCompatActivity {
                     intentOk.putExtra("false answer",False);
                     intentOk.putExtra("tests number",TestsNumber);
                     startActivity(intentOk);
-                } else {
+                } else if(radioGroup.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(MainActivity3.this, "یک گزینه انتخاب کنید", Toast.LENGTH_SHORT).show();
+                }
+                else {
                     ++False;
                     Toast.makeText(MainActivity3.this, "غلط", Toast.LENGTH_LONG).show();
                     Intent intentFalse =new Intent (MainActivity3.this,MainActivity4.class);
